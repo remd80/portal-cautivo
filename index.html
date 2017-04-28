@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P&aacute;gina de Autenticaci&oacute;n</title>
+	<link rel="stylesheet" href="captiveportal-index.css" media="screen" />
+	<script src="captiveportal-validator1.js"></script>
+	<script src="captiveportal-validator2.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Portal Cautivo</h1>
+		<h3>P&aacute;gina de Autenticaci&oacute;n</h3>
+		<img src="captiveportal-restricted_access.jpg" />
+		<p id="aviso"><span>AVISO:</span> El Tiempo M&aacute;ximo de Acceso es de <span>30 Minutos</span>,
+		al finalizar el Tiempo M&aacute;ximo, deber&aacute; ingresar sus datos nuevamente.</p>
+	</header>
+	<section>
+		<p>Para poder Acceder a la Red y para Navegar en la Internet, 
+		deber&aacute; ingresar su <span>usuario y contrase&ntilde;a</span> o su <span>Ticket</span>.</p>
+		<form method="post" action="$PORTAL_ACTION$" enctype="application/x-www-form-urlencoded" onsubmit="validator1()">
+			<p class="form">Usuario:</p> <input type="text" id="user" name="auth_user" />
+			<p class="form">Contrase&ntilde;a:</p> <input type="password" id="pass" name="auth_pass" />
+			<input type="hidden" name="redirurl" value="$PORTAL_REDIRURL$" />
+			<input type="submit" name="accept" value="Acceder" />
+		</form>
+	</section>
+	<section>
+		<form method="post" action="$PORTAL_ACTION$" enctype="application/x-www-form-urlencoded" onsubmit="validator2()">
+			<p class="form">Ticket:</p> <input type="text" id="voucher" name="auth_voucher" />
+			<input type="hidden" name="redirurl" value="$PORTAL_REDIRURL$" />
+			<input type="submit" name="accept" value="Acceder" />
+		</form>
+	</section>
+	<footer>
+		<p>Creado por: <span>Roberto E. Murillo D.</span></p>
+		<script src="captiveportal-tiempoactual.js"></script>
+		<table border="0" cellpadding="5" cellspacing="0">
+			<tr>
+				<td id="fecha"></td>
+				<td id="hora"></td>
+			</tr>
+		</table>
+		<script src="captiveportal-funciones.js"></script>
+	</footer>
+</body>
+</html>
